@@ -1,7 +1,6 @@
 pipeline {
 agent any
 
-```
 stages {
 
     stage('Build') {
@@ -13,7 +12,7 @@ stages {
     stage('Deploy') {
         steps {
             bat 'if not exist C:\\Deploy\\CricketClub mkdir C:\\Deploy\\CricketClub'
-            bat 'xcopy /E /I /Y "SourceCode\\Cricket club management system\\*" "C:\\Deploy\\CricketClub\\"'
+            bat 'xcopy /E /I /Y SourceCode\\Cricket club management system\\* C:\\Deploy\\CricketClub\\'
         }
     }
 
@@ -33,6 +32,5 @@ post {
         echo 'Build Failed'
     }
 }
-```
 
 }
